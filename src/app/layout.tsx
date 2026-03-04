@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -36,13 +37,13 @@ export default function RootLayout({
           style={{ borderBottom: '1px solid var(--border-subtle)' }}
         >
           <div className="flex items-center justify-between px-6 md:px-12 py-6">
-            <a
+            <Link
               href="/"
               className="text-lg font-light tracking-widest uppercase"
               style={{ color: 'var(--text-primary)', letterSpacing: '0.2em' }}
             >
               Campfire
-            </a>
+            </Link>
             <a
               href="https://modeforge.ai"
               className="text-sm font-light tracking-wide"
