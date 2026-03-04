@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-crimson: #E31D3B;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  --crimson: #E31D3B;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-elevated: #fafafa;
+  --bg-hover: #e5e5e5;
+  --text-primary: #000000;
+  --text-secondary: #525252;
+  --text-muted: #737373;
+  --accent: #E31D3B;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: #e5e5e5;
+  --shadow-color: rgba(0, 0, 0, 0.06);
+  --btn-primary-bg: #000000;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #222222;
+}
+
+.dark {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-elevated: #1a1a1a;
+  --bg-hover: #222222;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.12);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --btn-primary-bg: #ffffff;
+  --btn-primary-text: #0a0a0a;
+  --btn-primary-hover: #f5f5f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-elevated: #1a1a1a;
+    --bg-hover: #222222;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a3a3a3;
+    --text-muted: #737373;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-medium: rgba(255, 255, 255, 0.12);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --btn-primary-bg: #ffffff;
+    --btn-primary-text: #0a0a0a;
+    --btn-primary-hover: #f5f5f5;
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.article-content h2 { font-size: 1.5rem; font-weight: 400; margin-top: 2rem; margin-bottom: 1rem; }
+.article-content h3 { font-size: 1.25rem; font-weight: 400; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+.article-content p { margin-bottom: 1rem; line-height: 1.7; color: var(--text-secondary); }
+.article-content ul, .article-content ol { margin-bottom: 1rem; padding-left: 1.5rem; color: var(--text-secondary); }
+.article-content li { margin-bottom: 0.5rem; line-height: 1.7; }
+.article-content a { color: var(--accent); text-decoration: underline; }
+.article-content strong { font-weight: 500; color: var(--text-primary); }
