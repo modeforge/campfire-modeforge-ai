@@ -23,6 +23,7 @@ const inputStyles: React.CSSProperties = {
 
 export function RsvpCard({ eventSlug, eventDate, rsvpDeadline, initialCount }: RsvpCardProps) {
   const [modalOpen, setModalOpen] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
   const [rsvpCount, setRsvpCount] = useState(initialCount);
 
   const isExpired = new Date(rsvpDeadline + 'T23:59:59') < new Date();
@@ -34,6 +35,7 @@ export function RsvpCard({ eventSlug, eventDate, rsvpDeadline, initialCount }: R
         const guestCount = Number(formData.get('guestCount')) || 1;
         setRsvpCount((prev) => prev + guestCount);
         setModalOpen(false);
+        setConfirmed(true);
       }
       return result;
     },
@@ -89,7 +91,17 @@ export function RsvpCard({ eventSlug, eventDate, rsvpDeadline, initialCount }: R
             >
               RSVP Here
             </div>
-            {isExpired ? (
+            {confirmed ? (
+              <div
+                className="text-sm px-6 py-2"
+                style={{
+                  color: 'var(--text-primary)',
+                  border: '1px solid var(--border-medium)',
+                }}
+              >
+                You're in. See you there.
+              </div>
+            ) : isExpired ? (
               <div
                 className="text-sm px-6 py-2"
                 style={{
